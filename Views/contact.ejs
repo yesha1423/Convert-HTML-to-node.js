@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Html To Node</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle, #ffffff, #e1ebf7);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #333;
+      padding: 20px;
+    }
+
+    header {
+      background: #4a69bd;
+      color: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 40px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    header nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: #ffd32a;
+    }
+
+    h1 {
+      text-align: center;
+      color: #4a69bd;
+      font-size: 42px;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+      background: #ffffff;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    form::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(120deg, #4a69bd, #6a89cc);
+      z-index: 0;
+      transform: rotate(45deg);
+      transition: opacity 0.3s;
+      opacity: 0.05;
+    }
+
+    form:hover::before {
+      opacity: 0.1;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 16px;
+      background: #f9f9f9;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      border-color: #4a69bd;
+      background: #eef3fc;
+      outline: none;
+    }
+
+    form textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(120deg, #4a69bd, #6a89cc);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    form button:hover {
+      background: linear-gradient(120deg, #6a89cc, #4a69bd);
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #ffffff;
+      background: #4a69bd;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      form {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      form {
+        padding: 15px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <%- include('head') %>
+
+  <div>
+    <h1>Contact Us</h1>
+    <form action="/contact" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <footer>
+    &copy; 2024 Tech Innovations. All rights reserved.
+  </footer>
+</body>
+
+</html>
